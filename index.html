@@ -7,6 +7,7 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
     function setTxt(){
         document.getElementById("n").innerText = document.getElementById('name').value;
@@ -25,17 +26,31 @@
         document.body.appendChild(link);
         link.click();
     }
+
+    var check = $("#darkMode");
+    check.on('switchChange.bootstrapSwitch', function(){
+        if($('#darkMode').bootstrapSwitch('state')){
+        alert("on");
+    }else{
+        alert("off");
+    }
+    });
 </script>
 </head>
 <body style="background-color: #F5F5F5;">
     <center>
         <h1 style="margin-top: 10%;">ㄹㅇㅋㅋ</h1>
         <br>
+        <div style="background-color: #FFFFFF; width: 350px; height: 250px; border-radius: 20px 20px;">
+            <br>
+            <br>
         <input id="name" onchange="setTxt();" style="width: 250px;" class="form-control" type="text" placeholder="이름" aria-label="default input example">
         <br>
         <input id="c" onchange="setTxt();" style="width: 300px;" class="form-control" type="text" placeholder="내용" aria-label="default input example">
         <br>
+        </div>
     </center>
+    <br>
         <div id="screenshot" style="background-color: #FFFFFF; width: 328px; height: 60px; border-radius: 10px 10px; margin-left: auto; margin: 0 auto;">
             <div style="height: 49px; width: 8px; float: left; clear: both;"></div>
             <div style="width: 28px; height: 49px; float: left; position: relative;">
